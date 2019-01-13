@@ -1,0 +1,1 @@
+This directory includes php files to be _required_ inside of functions.php. Think of our `functions.php` like a directory of all of the partial files with our code. No code should be directly written into `functions.php` — instead you should add a new partial file in this directory and reference it in functions.php
