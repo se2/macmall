@@ -22,7 +22,7 @@ if ( ! function_exists( 'ttg_wp_setup' ) ) :
 		 * If you're building a theme based on ttg-wp-theme, use a find and replace
 		 * to change 'ttg-wp' to the name of your theme in all the template files.
 		 */
-		load_theme_textdomain( 'ttg-wp', get_template_directory() . '/languages' );
+		load_theme_textdomain( 'macmall', get_template_directory() . '/languages' );
 
 		// Add default posts and comments RSS feed links to head.
 		add_theme_support( 'automatic-feed-links' );
@@ -44,7 +44,8 @@ if ( ! function_exists( 'ttg_wp_setup' ) ) :
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
-			'menu-1' => esc_html__( 'Primary', 'ttg-wp' ),
+			'primary' => esc_html__( 'Primary', 'ttg-wp' ),
+			'footer'  => esc_html__( 'Footer', 'ttg-wp' ),
 		) );
 
 		/*

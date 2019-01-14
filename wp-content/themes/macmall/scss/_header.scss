@@ -1,0 +1,22 @@
+.site-header {
+	@apply .bg-black;
+	.container {
+		height: 54px;
+	}
+}
+
+.site-logo {
+  width: 50px;
+}
+
+ul.menu {
+  li {
+		@apply .inline-block;
+    a {
+			@apply text-white text-sm .font-display .font-normal .text-center px-40;
+      font-stretch: normal;
+      line-height: 1.43;
+      letter-spacing: normal;
+    }
+  }
+}

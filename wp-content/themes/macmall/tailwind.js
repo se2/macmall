@@ -45,12 +45,11 @@ View the full documentation at https://tailwindcss.com.
 let colors = {
   primary: '#3f4f60',
   secondary: '#5c6d7d',
-  tertiary: '#449da1',
-  quaternary: '#abd037',
-  light: '#ffffff',
-  grey: '#dee2e5',
-  'grey-light': '#f3f3f3',
-  'grey-dark': '#b2b9bf',
+  white: '#ffffff',
+	grey: '#777777',
+	black: '#282828',
+	brown: '#424242',
+	gunmetal: '#606161',
 }
 
 module.exports = {
@@ -89,11 +88,14 @@ module.exports = {
   */
 
   screens: {
+		'mobile': '480px',
     sm: '576px',
     md: '768px',
-    lg: '992px',
-    xl: '1200px',
-    '2xl': '1400px',
+		lg: '992px',
+		'ipad': '1024px',
+    xl: '1280px',
+		'2xl': '1400px',
+		wide: '1920px',
   },
 
   /*
@@ -115,33 +117,9 @@ module.exports = {
   */
 
   fonts: {
-    sans: [
-      'Montserrat',
-      'system-ui',
-      'BlinkMacSystemFont',
-      '-apple-system',
-      'Segoe UI',
+    display: [
       'Roboto',
-      'Oxygen',
-      'Ubuntu',
-      'Cantarell',
-      'Fira Sans',
-      'Droid Sans',
-      'Helvetica Neue',
       'sans-serif',
-    ],
-    serif: [
-      'Roboto Slab',
-      'Constantia',
-      'Lucida Bright',
-      'Lucidabright',
-      'Lucida Serif',
-      'Lucida',
-      'DejaVu Serif',
-      'Bitstream Vera Serif',
-      'Liberation Serif',
-      'Georgia',
-      'serif',
     ],
     mono: ['Menlo', 'Monaco', 'Consolas', 'Liberation Mono', 'Courier New', 'monospace'],
   },
@@ -166,17 +144,22 @@ module.exports = {
   */
 
   textSizes: {
-    xs: '.63rem', // 10px
-    sm: '.875rem', // 14px
-    base: '1rem', // 16px
-    lg: '1.125rem', // 18px
-    xl: '1.25rem', // 20px
-    '2xl': '1.5rem', // 24px
-    '3xl': '1.75rem', // 28px
-    '4xl': '1.875rem', // 30px
-    '5xl': '2.25rem', // 36px
-    '6xl': '3rem', // 48px
-    '7xl': '3.875rem', // 62px
+		xs: '.63rem', // 10px
+		'12px': '.75rem', // 12px
+		sm: '.875rem', // 14px
+		base: '1rem', // 16px
+		lg: '1.125rem', // 18px
+		xl: '1.25rem', // 20px
+		'2xl': '1.5rem', // 24px
+		'3xl': '1.75rem', // 28px
+		'4xl': '1.875rem', // 30px
+		'32px': '2rem', // 32px
+		'5xl': '2.25rem', // 36px
+		'44px': '2.75rem', // 44px
+		'6xl': '2.5rem', // 48px
+		'7xl': '3.75rem', // 60px
+		'8xl': '4.375rem', // 70px
+		'9xl': '5.625rem' // 90px
   },
 
   /*
@@ -195,7 +178,8 @@ module.exports = {
 
   fontWeights: {
     light: 300,
-    normal: 400,
+		normal: 400,
+		medium: 500,
     bold: 700,
   },
 
@@ -213,10 +197,15 @@ module.exports = {
 
   leading: {
     0: 0,
-    none: 1,
-    tighter: 1.25,
+		none: 1,
+		tiny: 1.15,
+		tighter: 1.25,
+		sm: 1.333333,
     tight: 1.4,
-    normal: 1.5,
+		normal: 1.5,
+		lg: 1.6666667,
+		xl: 1.75,
+		p: 1.8125,
     loose: 2,
   },
 
@@ -326,7 +315,7 @@ module.exports = {
   |
   */
 
-  borderColors: global.Object.assign({ default: colors['grey-secondary'], trans: 'rgba(255, 255, 255, 0.4)' }, colors),
+  borderColors: global.Object.assign({ default: colors['grey'], trans: 'rgba(255, 255, 255, 0.4)' }, colors),
 
   /*
   |-----------------------------------------------------------------------------
@@ -541,21 +530,22 @@ module.exports = {
   */
 
   padding: {
-    // px: '1px',
-    '0': '0',
-    // '1': '0.25rem',
-    '2': '0.5rem',
-    // '3': '0.75rem',
-    '4': '1rem',
-    // '5': '1.25rem',
-    '6': '1.5rem',
-    '8': '2rem',
-    '10': '2.5rem',
-    '12': '3rem',
-    '16': '4rem',
-    '20': '5rem',
-    '24': '6rem',
-    '32': '8rem',
+		'0': '0',
+		'2': '0.125rem',
+		'4': '0.25rem',
+		'5': '0.3125rem',
+		'10': '0.625rem',
+		'15': '0.9375rem',
+		'16': '1rem',
+		'20': '1.25rem',
+		'25': '1.5625rem',
+		'30': '1.875rem',
+		'40': '2.5rem',
+		'50': '3.125rem',
+		'60': '3.75rem',
+		'70': '4.375rem',
+		'80': '5rem',
+		'120': '7.5rem'
   },
 
   /*
@@ -575,21 +565,22 @@ module.exports = {
 
   margin: {
     auto: 'auto',
-    // px: '1px',
-    '0': '0',
-    // '1': '0.25rem',
-    '2': '0.5rem',
-    // '3': '0.75rem',
-    '4': '1rem',
-    // '5': '1.25rem',
-    '6': '1.5rem',
-    '8': '2rem',
-    '10': '2.5rem',
-    '12': '3rem',
-    '16': '4rem',
-    '20': '5rem',
-    '24': '6rem',
-    '32': '8rem',
+		'0': '0',
+		'2': '0.125rem',
+		'4': '0.25rem',
+		'5': '0.3125rem',
+		'10': '0.625rem',
+		'15': '0.9375rem',
+		'16': '1rem',
+		'20': '1.25rem',
+		'25': '1.5625rem',
+		'30': '1.875rem',
+		'40': '2.5rem',
+		'50': '3.125rem',
+		'60': '3.75rem',
+		'70': '4.375rem',
+		'80': '5rem',
+		'120': '7.5rem'
   },
 
   /*
@@ -608,21 +599,22 @@ module.exports = {
   */
 
   negativeMargin: {
-    px: '1px',
-    '0': '0',
-    '1': '0.25rem',
-    '2': '0.5rem',
-    '3': '0.75rem',
-    '4': '1rem',
-    '5': '1.25rem',
-    '6': '1.5rem',
-    '8': '2rem',
-    '10': '2.5rem',
-    '12': '3rem',
-    '16': '4rem',
-    '20': '5rem',
-    '24': '6rem',
-    '32': '8rem',
+		'0': '0',
+		'2': '0.125rem',
+		'4': '0.25rem',
+		'5': '0.3125rem',
+		'10': '0.625rem',
+		'15': '0.9375rem',
+		'16': '1rem',
+		'20': '1.25rem',
+		'25': '1.5625rem',
+		'30': '1.875rem',
+		'40': '2.5rem',
+		'50': '3.125rem',
+		'60': '3.75rem',
+		'70': '4.375rem',
+		'80': '5rem',
+		'120': '7.5rem'
   },
 
   /*
@@ -670,7 +662,8 @@ module.exports = {
     '20': 20,
     '30': 30,
     '40': 40,
-    '50': 50,
+		'50': 50,
+		top: 999,
   },
 
   /*

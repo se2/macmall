@@ -10,6 +10,24 @@
   margin-top: 0; // single-direction margins only. @see: https://bit.ly/2LGJ2mr
 }
 
-// Include our includes!
-@import 'wp';
-@import 'buttons'
+// Hamburger
+$hamburger-layer-color: white;
+$hamburger-layer-width: 27px;
+$hamburger-layer-height: 3px;
+$hamburger-layer-border-radius: 0;
+$hamburger-padding-x: 0;
+$hamburger-padding-y: 0;
+
+@import "hamburgers/hamburgers.scss";
+
+// Global
+@import "wp";
+@import "global";
+
+// Components
+@import "header";
+@import "footer";
+
+// Templates
+@import "front";
+@import "contact";

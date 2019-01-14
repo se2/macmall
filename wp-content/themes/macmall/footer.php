@@ -13,20 +13,46 @@
 
 	</div><!-- #content -->
 
+
 	<footer id="colophon" class="site-footer">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'ttg-wp' ) ); ?>">
-				<?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'ttg-wp' ), 'WordPress' );
-				?>
-			</a>
-			<span class="sep"> | </span>
-				<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'ttg-wp' ), 'ttg-wp', '<a href="http://technologytherapy">ttg</a>' );
-				?>
-		</div><!-- .site-info -->
+
+		<?php if ( is_active_sidebar( 'footer-widgets' ) ) : ?>
+		<div class="footer-widgets">
+			<div class="container flex flex-wrap justify-center items-center">
+				<?php dynamic_sidebar( 'footer-widgets' ); ?>
+			</div>
+		</div>
+		<?php endif; ?>
+
+		<div class="container flex flex-wrap items-center justify-center">
+			<div class="site-info h-auto overflow-auto text-center">
+				<nav id="footer-navigation" class="footer-navigation">
+					<?php
+					wp_nav_menu( array(
+						'theme_location' => 'footer',
+						'container'      => false,
+					) );
+					?>
+				</nav><!-- #site-navigation -->
+				<div class="site-socials">
+					<?php
+					$socials = get_field( 'social_accounts', 'option' );
+					if ( $socials ) :
+					?>
+					<ul class="socials-list list-reset">
+						<?php foreach ( $socials as $key => $social ) : ?>
+						<li class="social inline-block">
+							<a target="_blank" href="<?php echo esc_url( $social['social_url'] ); ?>" class="block rounded-full flex items-center justify-center">
+								<i class="<?php echo esc_attr( $social['social_service'] ); ?>"></i>
+							</a>
+						</li>
+						<?php endforeach; ?>
+					</ul>
+					<?php endif; ?>
+				</div>
+			</div><!-- .site-info -->
+		</div>
+
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 
