@@ -6,7 +6,9 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package ttg-wp-theme
+ * @package    MacMall
+ * @author     Maple Studio
+ * @link       https://maplestudio.vn/
  */
 
 ?>
@@ -60,6 +62,9 @@
 			</nav><!-- #site-navigation -->
 
 			<div class="search-bar">
+				<a href="#!" class="search-toggle">
+					<img src="<?php echo get_template_directory_uri(); ?>/img/search.svg" alt="MacMall Search">
+				</a>
 			</div>
 
 		</div>

@@ -13,7 +13,14 @@ p {
 
 a {
   @apply .no-underline .outline-none;
-  transition: color 400ms;
+	transition: color 400ms;
+	&.text-black {
+		@screen lg {
+			&:hover {
+				@apply text-grey;
+			}
+		}
+	}
 }
 
 ul.menu {

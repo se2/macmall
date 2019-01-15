@@ -4,7 +4,9 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package ttg-wp-theme
+ * @package    MacMall
+ * @author     Maple Studio
+ * @link       https://maplestudio.vn/
  */
 
 ?>

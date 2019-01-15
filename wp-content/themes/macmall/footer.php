@@ -6,7 +6,9 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package ttg-wp-theme
+ * @package    MacMall
+ * @author     Maple Studio
+ * @link       https://maplestudio.vn/
  */
 
 ?>
@@ -42,7 +44,7 @@
 					<ul class="socials-list list-reset">
 						<?php foreach ( $socials as $key => $social ) : ?>
 						<li class="social inline-block">
-							<a target="_blank" href="<?php echo esc_url( $social['social_url'] ); ?>" class="block rounded-full flex items-center justify-center">
+							<a target="_blank" href="<?php echo esc_url( $social['social_url'] ); ?>" class="block rounded-full flex items-center justify-center text-black">
 								<i class="<?php echo esc_attr( $social['social_service'] ); ?>"></i>
 							</a>
 						</li>

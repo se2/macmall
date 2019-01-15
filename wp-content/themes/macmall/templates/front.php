@@ -3,9 +3,9 @@
  * Template Name: Front
  *
  * @category   Template
- * @package    TTG
- * @author     Technology Therapy Group
- * @link       https://technologytherapy.com/
+ * @package    MacMall
+ * @author     Maple Studio
+ * @link       https://maplestudio.vn/
  */
 
 get_header();
@@ -16,7 +16,7 @@ while ( have_posts() ) :
 
 <main id="main-content" role="main" class="main-content">
 
-	<?php get_template_part( 'template-parts/page', 'blocks' ); ?>
+	<?php get_template_part( 'template-parts/home', 'media' ); ?>
 
 </main>
 
