@@ -1,0 +1,22 @@
+.woocommerce-loop-product__title {
+	@apply font-display .text-base .font-normal;
+  line-height: 1.38;
+  color: #8c8c8c;
+}
+
+.woocommerce-Price-amount {
+	@apply text-sm text-black;
+}
+
+.price ins {
+	@apply .no-underline;
+	.woocommerce-Price-amount {
+		@apply text-gold .font-normal;
+	}
+}
+
+.woocommerce span.onsale {
+	@apply text-sm p-0;
+	color: #373737;
+	background-color: transparent;
+}

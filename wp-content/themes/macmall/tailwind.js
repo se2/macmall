@@ -50,6 +50,7 @@ let colors = {
 	black: '#282828',
 	brown: '#424242',
 	gunmetal: '#606161',
+	gold: '#dc9814',
 }
 
 module.exports = {
@@ -200,7 +201,7 @@ module.exports = {
 		none: 1,
 		tiny: 1.15,
 		tighter: 1.25,
-		sm: 1.333333,
+		sm: 1.375,
     tight: 1.4,
 		normal: 1.5,
 		lg: 1.6666667,

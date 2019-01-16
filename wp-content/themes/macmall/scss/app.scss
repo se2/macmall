@@ -29,5 +29,9 @@ $hamburger-padding-y: 0;
 @import "footer";
 
 // Templates
+@import "page";
 @import "front";
 @import "contact";
+
+// WooCommerce
+@import "woocommerce";

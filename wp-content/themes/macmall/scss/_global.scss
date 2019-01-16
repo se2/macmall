@@ -8,7 +8,10 @@ body {
 }
 
 p {
-  @apply .font-display text-base .font-normal leading-p;
+	@apply .font-display text-base .font-normal leading-p text-grey;
+	a {
+		@apply text-gold;
+	}
 }
 
 a {
@@ -29,8 +32,11 @@ ul.menu {
 
 .container {
   @apply .relative w-full px-20 .mx-auto .overflow-x-hidden;
-  max-width: 1280px;
-  @screen xl {
+	max-width: 1360px;
+	@screen ipad {
+		@apply px-40;
+	}
+  @screen 2xl {
     @apply .px-0;
   }
 }

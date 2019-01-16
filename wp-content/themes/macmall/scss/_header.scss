@@ -1,5 +1,9 @@
+#page {
+	padding-top: 54px;
+}
+
 .site-header {
-	@apply .bg-black;
+	top: 0;
 	.container {
 		height: 54px;
 	}
@@ -20,3 +24,5 @@ ul.menu {
     }
   }
 }
+
+

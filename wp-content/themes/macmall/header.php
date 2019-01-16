@@ -37,7 +37,7 @@
 
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'macmall' ); ?></a>
 
-	<header id="masthead" class="site-header">
+	<header id="masthead" class="site-header bg-black fixed w-full z-50">
 
 		<div class="wrapper container flex flex-wrap items-center justify-between">
 
