@@ -76,3 +76,25 @@ add_filter( 'woocommerce_sale_flash', 'macmall_percentage_sale', 10, 3 );
 
 // Remove Add to Cart Button Loop page
 remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10 );
+// remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 30 );
+
+/**
+ * Replace the home link URL
+ */
+
+add_filter( 'woocommerce_breadcrumb_home_url', 'woo_custom_breadrumb_home_url' );
+
+function woo_custom_breadrumb_home_url() {
+	return get_permalink( wc_get_page_id( 'shop' ) );
+}
+
+/**
+ * Rename "home" in breadcrumb
+ */
+
+add_filter( 'woocommerce_breadcrumb_defaults', 'wcc_change_breadcrumb_home_text' );
+
+function wcc_change_breadcrumb_home_text( $defaults ) {
+	$defaults['home'] = 'Shop';
+	return $defaults;
+}

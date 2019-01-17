@@ -1,22 +1,98 @@
+.archive.woocommerce {
+  .woocommerce-breadcrumb {
+    @apply hidden;
+  }
+}
+
+.woocommerce ul.products {
+  @extend .container;
+}
+
+.woocommerce-products-header,
+.entry-header {
+  margin-top: 52px;
+  margin-bottom: 17px;
+}
+
+.entry-title {
+  @apply text-black .font-display .font-bold text-4xl .text-center .leading-tight;
+}
+
+.archive-description {
+  @apply pb-20;
+}
+
 .woocommerce-loop-product__title {
-	@apply font-display .text-base .font-normal;
+  @apply font-display .text-base .font-normal;
   line-height: 1.38;
   color: #8c8c8c;
 }
 
 .woocommerce-Price-amount {
-	@apply text-sm text-black;
+  @apply text-sm text-black;
 }
 
 .price ins {
-	@apply .no-underline;
-	.woocommerce-Price-amount {
-		@apply text-gold .font-normal;
-	}
+  @apply .no-underline;
+  .woocommerce-Price-amount {
+    @apply text-gold .font-normal;
+  }
 }
 
 .woocommerce span.onsale {
-	@apply text-sm p-0;
-	color: #373737;
-	background-color: transparent;
+  @apply text-sm p-0;
+  color: #373737;
+  background-color: transparent;
+}
+
+/* Single Product */
+.woocommerce.single.single-product {
+	a {
+		@apply text-gold;
+	}
+  .content-area.container {
+    max-width: 1130px;
+    padding-top: 31px;
+    padding-bottom: 105px;
+  }
+  .woocommerce-breadcrumb {
+    @apply mb-50;
+  }
+  .woocommerce-product-gallery {
+    max-width: 525px;
+  }
+  div.images .woocommerce-product-gallery__image:nth-child(n + 2) {
+    width: 60px;
+  }
+  .product_title.entry-title {
+		@apply .text-26px .text-left .text-black .font-display .font-normal;
+	}
+	p.price .woocommerce-Price-amount {
+		@apply text-3xl .text-gold;
+	}
+	.woocommerce-product-details__short-description {
+		@apply .pb-30 mb-30;
+		border-bottom: 1px solid #dadada;
+	}
+	div.product .woocommerce-variation-description p {
+		@apply .mb-40;
+	}
+	.product_meta {
+		@apply hidden;
+	}
+	table.variations {
+		td.label {
+			padding: 15px 0;
+		}
+	}
+	form.cart .variations select {
+		-webkit-appearance: none;
+		padding: 20px 15px;
+		border-radius: 6px;
+	}
+	.call-to-order {
+		@apply .text-white .bg-black w-full .inline-block .text-center;
+		height: 44px;
+		line-height: 44px;
+	}
 }

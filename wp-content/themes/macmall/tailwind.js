@@ -152,6 +152,7 @@ module.exports = {
 		lg: '1.125rem', // 18px
 		xl: '1.25rem', // 20px
 		'2xl': '1.5rem', // 24px
+		'26px': '1.625rem', // 26px
 		'3xl': '1.75rem', // 28px
 		'4xl': '1.875rem', // 30px
 		'32px': '2rem', // 32px

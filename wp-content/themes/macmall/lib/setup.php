@@ -80,6 +80,14 @@ if ( ! function_exists( 'ttg_wp_setup' ) ) :
 			'flex-width'  => true,
 			'flex-height' => true,
 		) );
+
+		/**
+		 * Add support for WooCommerce.
+		 *
+		 * @link https://github.com/woocommerce/woocommerce/wiki/Declaring-WooCommerce-support-in-themes
+		 */
+		add_theme_support( 'woocommerce' );
+
 	}
 endif;
 add_action( 'after_setup_theme', 'ttg_wp_setup' );

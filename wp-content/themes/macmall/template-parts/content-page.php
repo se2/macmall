@@ -17,12 +17,6 @@
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 	</header><!-- .entry-header -->
 
-	<?php if ( is_product_category() ) : ?>
-	<div class="archive-description">
-		<?php the_field( 'product_cat_description' ); ?>
-	</div>
-	<?php endif; ?>
-
 	<div class="entry-content">
 		<?php the_content(); ?>
 	</div><!-- .entry-content -->
