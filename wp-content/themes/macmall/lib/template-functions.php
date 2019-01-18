@@ -98,3 +98,13 @@ function wcc_change_breadcrumb_home_text( $defaults ) {
 	$defaults['home'] = 'Shop';
 	return $defaults;
 }
+
+//* http://gasolicious.com/remove-tabs-keep-product-description-woocommerce/
+// Removes woocommerce tabs
+remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_product_data_tabs', 10 );
+
+// Re-add product full description
+function woocommerce_template_product_description() {
+	wc_get_template( 'single-product/tabs/description.php' );
+}
+add_action( 'woocommerce_after_single_product', 'woocommerce_template_product_description', 20 );
