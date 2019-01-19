@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="12" height="15" viewBox="0 0 12 15">
+    <g fill="none" fill-rule="evenodd">
+        <text fill="#E93B05" font-family="Roboto-Regular, Roboto" font-size="6">
+            <tspan x=".018" y="6">New</tspan>
+        </text>
+        <path fill-rule="nonzero" d="M0 8h12v7H0z"/>
+    </g>
+</svg>

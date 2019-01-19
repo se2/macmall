@@ -41,6 +41,14 @@
 
 		<div class="wrapper container flex flex-wrap items-center justify-between">
 
+			<div class="toggle-button text-right ipad:hidden">
+				<button class="hamburger hamburger--collapse outline-none inline-block lg:hidden" type="button">
+					<span class="hamburger-box">
+						<span class="hamburger-inner"></span>
+					</span>
+				</button>
+			</div>
+
 			<div class="site-branding">
 				<?php $logo = get_field( 'white_logo', 'option' ); ?>
 				<a href="<?php the_clean_url(); ?>">
@@ -52,7 +60,7 @@
 				</a>
 			</div><!-- .site-branding -->
 
-			<nav id="site-navigation" class="main-navigation">
+			<nav id="site-navigation" class="main-navigation hidden ipad:inline-block">
 				<?php
 				wp_nav_menu( array(
 					'theme_location' => 'primary',
@@ -62,12 +70,20 @@
 			</nav><!-- #site-navigation -->
 
 			<div class="search-bar">
-				<a href="#!" class="search-toggle">
+				<a href="#!" class="search-toggle hidden ipad:inline-block">
 					<img src="<?php echo get_template_directory_uri(); ?>/img/search.svg" alt="MacMall Search">
+				</a>
+				<a href="tel:0386666663" class="ipad:hidden">
+					<img width="16px" src="<?php echo get_template_directory_uri(); ?>/img/phone.svg" alt="Call MacMall">
 				</a>
 			</div>
 
 		</div>
+
+		<!-- Mega menu -->
+		<div class="mega-menu-wrapper w-full">
+			<?php get_template_part( 'template-parts/mega-menu' ); ?>
+		</div><!-- Mega menu -->
 
 	</header><!-- #masthead -->
 

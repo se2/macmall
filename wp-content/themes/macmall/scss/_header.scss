@@ -1,23 +1,29 @@
 #page {
-	padding-top: 54px;
+  padding-top: 54px;
 }
 
 .site-header {
-	top: 0;
-	.container {
-		height: 54px;
-	}
+  top: 0;
+  .container {
+    height: 54px;
+  }
 }
 
 .site-logo {
-  width: 50px;
+  width: 45px;
+  @screen md {
+    width: 50px;
+  }
 }
 
 ul.menu {
   li {
-		@apply .inline-block;
+    @apply .inline-block;
+    ul.sub-menu {
+      @apply .hidden;
+    }
     a {
-			@apply text-white text-sm .font-display .font-normal .text-center px-40;
+      @apply text-white text-sm .font-display .font-normal .text-center px-40;
       font-stretch: normal;
       line-height: 1.43;
       letter-spacing: normal;
@@ -25,4 +31,33 @@ ul.menu {
   }
 }
 
-
+// Mega-menu styling
+.mega-menu {
+  @apply .fixed z-top .w-full hidden;
+  padding-top: 12px;
+  @screen ipad {
+    &.js-active {
+      @apply block;
+    }
+  }
+  .container {
+		@apply .bg-white .h-auto;
+    animation-duration: 800ms;
+    max-width: 800px;
+    border-radius: 12px;
+    box-shadow: 0 1px 18px 0 rgba(0, 0, 0, 0.75);
+    ul.mega-menu__submenu {
+      @apply flex .flex-wrap .w-full;
+      li {
+        @apply w-1/5 px-30 text-center py-20;
+        img {
+          margin-bottom: 1px;
+        }
+        a {
+          font-size: 8px;
+          color: #9e9d9e;
+        }
+      }
+    }
+  }
+}

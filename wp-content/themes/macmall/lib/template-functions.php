@@ -108,3 +108,26 @@ function woocommerce_template_product_description() {
 	wc_get_template( 'single-product/tabs/description.php' );
 }
 add_action( 'woocommerce_after_single_product', 'woocommerce_template_product_description', 20 );
+
+/**
+ * Mega Menu id to toggle
+ * Add menu image to sub-menu
+ */
+function wp_nav_menu_atts( $atts, $item, $args ) {
+	if ( '0' === $item->menu_item_parent ) {
+		$atts['data-mega'] = $item->ID;
+	} else {
+		$thumbnail_id = get_woocommerce_term_meta( $item->object_id, 'thumbnail_id', true );
+		$image        = wp_get_attachment_url( $thumbnail_id );
+		if ( $image ) {
+			$new = '';
+			if ( get_field( 'has_new_products', $item ) ) {
+				$new = '<img class="new-sign" src="' . get_template_directory_uri() . '/img/new-sign.svg" alt="' . esc_html( $item->title ) . '">';
+			}
+			$item->title = '<img src="' . $image . '" alt="' . esc_html( $item->title ) . '">' . '<span>' . $item->title . '</span>' . $new;
+		}
+	}
+	return $atts;
+}
+
+add_filter( 'nav_menu_link_attributes', 'wp_nav_menu_atts', 10, 3 );

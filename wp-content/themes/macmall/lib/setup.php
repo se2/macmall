@@ -1,10 +1,10 @@
 <?php
 /**
- * ttg-wp-theme functions and definitions
+ * macmall-theme functions and definitions
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package ttg-wp-theme
+ * @package macmall-theme
  */
 
 if ( ! function_exists( 'ttg_wp_setup' ) ) :
@@ -19,8 +19,8 @@ if ( ! function_exists( 'ttg_wp_setup' ) ) :
 		/*
 		 * Make theme available for translation.
 		 * Translations can be filed in the /languages/ directory.
-		 * If you're building a theme based on ttg-wp-theme, use a find and replace
-		 * to change 'ttg-wp' to the name of your theme in all the template files.
+		 * If you're building a theme based on macmall-theme, use a find and replace
+		 * to change 'macmall' to the name of your theme in all the template files.
 		 */
 		load_theme_textdomain( 'macmall', get_template_directory() . '/languages' );
 
@@ -44,8 +44,8 @@ if ( ! function_exists( 'ttg_wp_setup' ) ) :
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
-			'primary' => esc_html__( 'Primary', 'ttg-wp' ),
-			'footer'  => esc_html__( 'Footer', 'ttg-wp' ),
+			'primary' => esc_html__( 'Primary', 'macmall' ),
+			'footer'  => esc_html__( 'Footer', 'macmall' ),
 		) );
 
 		/*
