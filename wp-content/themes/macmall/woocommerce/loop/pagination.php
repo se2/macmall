@@ -65,10 +65,15 @@ if ( $total <= 1 ) {
 			data: {
 				action : 'get_ajax_products',
 				page: currentPage,
-				product_cat: woocommerce.product_cat
+				product_cat: woo.product_cat,
+				nonce: woo.ajax_nonce
 			},
-			success: function(response) {
-				$("ul.products").append(response);
+			success: function(resp) {
+				$("ul.products").append(resp);
+				$(".loading-spinner").addClass("hidden");
+			},
+			error: function(resp) {
+				console.log(resp);
 				$(".loading-spinner").addClass("hidden");
 			}
 		});

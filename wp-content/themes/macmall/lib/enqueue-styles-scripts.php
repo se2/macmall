@@ -15,8 +15,9 @@ function ttg_wp_scripts() {
 	$product_cat = is_product_category() ? intval( $wp_query->get_queried_object()->term_id ) : -1;
 	$translation_array = array(
 		'product_cat' => $product_cat,
+		'ajax_nonce'  => wp_create_nonce( 'get_products' ),
 	);
-	wp_localize_script( 'app', 'woocommerce', $translation_array );
+	wp_localize_script( 'app', 'woo', $translation_array );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );

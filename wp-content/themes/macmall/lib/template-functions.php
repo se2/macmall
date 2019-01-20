@@ -138,6 +138,8 @@ add_filter( 'nav_menu_link_attributes', 'wp_nav_menu_atts', 10, 3 );
  */
 function get_ajax_products() {
 
+	check_ajax_referer( 'get_products', 'nonce' );
+
 	$html        = '';
 	$page        = intval( filter_var( $_POST[ 'page' ], FILTER_SANITIZE_NUMBER_INT ) ) + 1;
 	$product_cat = intval( filter_var( $_POST[ 'product_cat' ], FILTER_SANITIZE_NUMBER_INT ) );
