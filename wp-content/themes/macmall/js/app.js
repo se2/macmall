@@ -20,7 +20,7 @@
       function() {
         setTimeout(function() {
           $(".js-mega-menu").removeClass("js-active");
-        }, 500);
+        }, 300);
       }
     );
   });

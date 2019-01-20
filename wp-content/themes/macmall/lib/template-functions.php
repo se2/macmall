@@ -131,3 +131,52 @@ function wp_nav_menu_atts( $atts, $item, $args ) {
 }
 
 add_filter( 'nav_menu_link_attributes', 'wp_nav_menu_atts', 10, 3 );
+
+/**
+ * Ajax get products
+ *
+ */
+function get_ajax_products() {
+
+	$html        = '';
+	$page        = intval( filter_var( $_POST[ 'page' ], FILTER_SANITIZE_NUMBER_INT ) ) + 1;
+	$product_cat = intval( filter_var( $_POST[ 'product_cat' ], FILTER_SANITIZE_NUMBER_INT ) );
+
+	// Query Arguments
+	$args = array(
+		'post_type'      => array( 'product' ),
+		'post_status'    => array( 'publish' ),
+		'posts_per_page' => wc_get_default_products_per_row() * wc_get_default_product_rows_per_page(),
+		'paged'          => $page,
+		'orderby'        => 'menu_order', // use this for woocommerce
+		'order'          => 'ASC', // use this for woocommerce
+	);
+
+	if ( $product_cat != -1 ) {
+		$args['tax_query'] = array(
+			array(
+				'taxonomy' => 'product_cat',
+				'field'    => 'ID',
+				'terms'    => $product_cat,
+				'operator' => 'IN'
+			)
+			);
+	}
+
+	$products_query = new WP_Query( $args );
+
+	if ( $products_query->have_posts() ) {
+		ob_start();
+		while ( $products_query->have_posts() ) {
+			$products_query->the_post();
+			$html .= wc_get_template_part( 'content', 'product' );
+		}
+		wp_reset_postdata();
+		$html = ob_get_clean();
+	}
+	echo $html;
+	exit;
+}
+
+add_action( 'wp_ajax_get_ajax_products', 'get_ajax_products' );
+add_action( 'wp_ajax_nopriv_get_ajax_products', 'get_ajax_products' );

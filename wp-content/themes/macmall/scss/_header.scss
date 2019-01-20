@@ -42,12 +42,12 @@ ul.menu {
   }
   .container {
 		@apply .bg-white .h-auto;
-    animation-duration: 800ms;
-    max-width: 800px;
+    animation-duration: 1s;
+    max-width: 800px !important;
     border-radius: 12px;
     box-shadow: 0 1px 18px 0 rgba(0, 0, 0, 0.75);
     ul.mega-menu__submenu {
-      @apply flex .flex-wrap .w-full;
+      @apply flex .flex-wrap .w-full .justify-center;
       li {
         @apply w-1/5 px-30 text-center py-20;
         img {

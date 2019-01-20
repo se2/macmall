@@ -8,22 +8,22 @@ body {
 }
 
 p {
-	@apply .font-display text-base .font-normal leading-p text-grey;
-	a {
-		@apply text-gold;
-	}
+  @apply .font-display text-base .font-normal leading-p text-grey;
+  a {
+    @apply text-gold;
+  }
 }
 
 a {
   @apply .no-underline .outline-none;
-	transition: color 400ms;
-	&.text-black {
-		@screen lg {
-			&:hover {
-				@apply text-grey;
-			}
-		}
-	}
+  transition: color 400ms;
+  &.text-black {
+    @screen lg {
+      &:hover {
+        @apply text-grey;
+      }
+    }
+  }
 }
 
 ul.menu {
@@ -32,10 +32,10 @@ ul.menu {
 
 .container {
   @apply .relative w-full px-20 .mx-auto .overflow-x-hidden;
-	max-width: 1360px;
-	@screen ipad {
-		@apply px-40;
-	}
+  max-width: 1360px;
+  @screen ipad {
+    @apply px-40;
+  }
   @screen 2xl {
     @apply .px-0;
   }
@@ -43,4 +43,67 @@ ul.menu {
 
 .site-content {
   @apply .overflow-x-hidden;
+}
+
+@-webkit-keyframes rotate-forever {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@-moz-keyframes rotate-forever {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotate-forever {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+.loading-spinner {
+  -webkit-animation-duration: 1.5s;
+  -moz-animation-duration: 1.5s;
+  animation-duration: 1.5s;
+  -webkit-animation-iteration-count: infinite;
+  -moz-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-name: rotate-forever;
+  -moz-animation-name: rotate-forever;
+  animation-name: rotate-forever;
+  -webkit-animation-timing-function: linear;
+  -moz-animation-timing-function: linear;
+  animation-timing-function: linear;
 }

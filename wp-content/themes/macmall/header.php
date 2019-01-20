@@ -81,7 +81,7 @@
 		</div>
 
 		<!-- Mega menu -->
-		<div class="mega-menu-wrapper w-full">
+		<div class="mega-menu-wrapper w-full hidden ipad:block">
 			<?php get_template_part( 'template-parts/mega-menu' ); ?>
 		</div><!-- Mega menu -->
 
