@@ -60,18 +60,26 @@
 				</a>
 			</div><!-- .site-branding -->
 
-			<nav id="site-navigation" class="main-navigation hidden ipad:inline-block">
+			<form role="search" method="get" class="w-1/2 search-form flex-wrap hidden ipad:flex <?php echo is_search() ? '' : 'no-show'; ?>" action="/">
+				<button type="submit" class="search-submit">
+					<img width="16px" src="<?php echo get_template_directory_uri(); ?>/img/search.svg" alt="MacMall Search">
+				</button>
+				<input type="search" autofocus class="search-field" placeholder="Tìm kiếm" value="<?php echo ( is_search() ) ? $_REQUEST['s'] : ""; ?>" name="s" required>
+			</form>
+
+			<nav id="site-navigation" class="main-navigation hidden ipad:inline-block <?php echo is_search() ? 'no-show' : ''; ?>">
 				<?php
 				wp_nav_menu( array(
 					'theme_location' => 'primary',
 					'container'      => false,
 				) );
 				?>
-			</nav><!-- #site-navigation -->
+			</nav>
 
 			<div class="search-bar">
 				<a href="#!" class="search-toggle hidden ipad:inline-block">
-					<img src="<?php echo get_template_directory_uri(); ?>/img/search.svg" alt="MacMall Search">
+					<img class="<?php echo is_search() ? 'hidden' : ''; ?>" src="<?php echo get_template_directory_uri(); ?>/img/search.svg" alt="MacMall Search">
+					<img class="<?php echo is_search() ? '' : 'hidden'; ?>" src="<?php echo get_template_directory_uri(); ?>/img/close.svg" alt="MacMall Search">
 				</a>
 				<a href="tel:0386666663" class="ipad:hidden">
 					<img width="16px" src="<?php echo get_template_directory_uri(); ?>/img/phone.svg" alt="Call MacMall">

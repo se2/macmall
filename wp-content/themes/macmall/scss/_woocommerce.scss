@@ -190,3 +190,9 @@ a.products-load-more {
 		}
 	}
 }
+
+.search {
+	.woocommerce-breadcrumb {
+		@apply hidden;
+	}
+}

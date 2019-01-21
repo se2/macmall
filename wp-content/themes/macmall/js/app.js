@@ -23,5 +23,13 @@
         }, 300);
       }
     );
+    // Search toggle icon
+    $(".search-toggle").click(function(e) {
+			e.preventDefault();
+			$(this).find("img").toggleClass("hidden");
+			$(".search-form").toggleClass("no-show");
+			$(".search-form input[type=search]").focus();
+			$(".main-navigation").toggleClass("no-show");
+    });
   });
 })(jQuery);

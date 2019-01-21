@@ -19,10 +19,10 @@ defined( 'ABSPATH' ) || exit;
 
 get_header( 'shop' );
 
-if (is_product_category()) {
+if ( is_product_category() ) {
 	$queried_object = get_queried_object();
-	$taxonomy = $queried_object->taxonomy;
-	$term_id = $queried_object->term_id;
+	$taxonomy       = $queried_object->taxonomy;
+	$term_id        = $queried_object->term_id;
 }
 
 /**
