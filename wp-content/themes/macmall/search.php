@@ -54,12 +54,6 @@ do_action( 'woocommerce_before_main_content' );
 		?>
 	</header>
 
-	<?php if ( is_product_category() ) : ?>
-	<div class="archive-description container">
-		<?php the_field( 'product_cat_description', get_term( $term_id, $taxonomy ) ); ?>
-	</div>
-	<?php endif; ?>
-
 	<?php
 	if ( woocommerce_product_loop() ) {
 
@@ -75,6 +69,7 @@ do_action( 'woocommerce_before_main_content' );
 		woocommerce_product_loop_start();
 
 		while ( have_posts() ) {
+
 			the_post();
 
 			/**
@@ -95,6 +90,7 @@ do_action( 'woocommerce_before_main_content' );
 		 * @hooked woocommerce_pagination - 10
 		 */
 		do_action( 'woocommerce_after_shop_loop' );
+
 	} else {
 		/**
 		 * Hook: woocommerce_no_products_found.
@@ -115,12 +111,5 @@ do_action( 'woocommerce_before_main_content' );
  * @hooked woocommerce_output_content_wrapper_end - 10 (outputs closing divs for the content)
  */
 do_action( 'woocommerce_after_main_content' );
-
-/**
- * Hook: woocommerce_sidebar.
- *
- * @hooked woocommerce_get_sidebar - 10
- */
-do_action( 'woocommerce_sidebar' );
 
 get_footer( 'shop' );

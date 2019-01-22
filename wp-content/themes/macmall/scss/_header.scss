@@ -36,16 +36,16 @@ ul.menu {
 }
 
 .search-form {
-	@apply flex .flex-wrap .items-center;
-	button {
-		@apply .outline-none;
-		height: 21px;
-		margin-right: 15px;
-	}
+  @apply flex .flex-wrap .items-center;
+  button {
+    @apply .outline-none;
+    height: 21px;
+    margin-right: 15px;
+  }
   input[type="search"] {
-		@apply .outline-none .text-white .text-base;
-		width: calc(100% - 16px - 21px);
-		line-height: 21px;
+    @apply .outline-none .text-white .text-base;
+    width: calc(100% - 16px - 21px);
+    line-height: 21px;
     background: transparent;
     &::-webkit-input-placeholder {
       /* Chrome/Opera/Safari */
@@ -94,6 +94,81 @@ ul.menu {
         a {
           font-size: 8px;
           color: #9e9d9e;
+        }
+      }
+    }
+  }
+}
+
+.hamburger:focus {
+  @apply .outline-none;
+}
+
+.mobile-dropdown {
+  transition: all 700ms ease;
+  top: -100vh;
+  &.is-active {
+    top: 54px;
+  }
+  hr {
+    @apply w-full;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.3);
+  }
+  .search-form {
+    @apply .mx-auto flex .flex-wrap .items-center;
+    padding: 0 8px;
+    margin-top: 8px;
+    margin-bottom: 15px;
+    height: 36px;
+    width: calc(100% - 30px);
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.4);
+  }
+  .mobile-navigation {
+    @apply block .mx-auto;
+    width: 81.33333333%;
+    li {
+      @apply block;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+      a {
+        @apply block text-left;
+        padding: 15px 0;
+        line-height: 1.25;
+      }
+      &:last-child {
+        border-bottom: 0;
+      }
+      &.menu-item-has-children {
+        @apply .relative;
+        &:before {
+          content: "";
+          @apply .absolute;
+          transition: all 500ms;
+          border-top: 2px solid transparent;
+          border-left: 2px solid transparent;
+          top: 17px;
+          transform: rotate(-45deg);
+          left: -21px;
+          width: 12px;
+          height: 12px;
+				}
+				&.is-active {
+					&:before {
+						border-color: white;
+					}
+					border-bottom: 0;
+				}
+      }
+      ul.sub-menu {
+        @apply pl-0;
+        a {
+          img {
+            @apply hidden;
+          }
+        }
+        li:last-child {
+          border-bottom: 0;
         }
       }
     }

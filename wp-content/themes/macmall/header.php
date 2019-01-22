@@ -37,17 +37,15 @@
 
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'macmall' ); ?></a>
 
-	<header id="masthead" class="site-header bg-black fixed w-full z-50">
+	<header id="masthead" class="site-header bg-black fixed w-full z-top">
 
 		<div class="wrapper container flex flex-wrap items-center justify-between">
 
-			<div class="toggle-button text-right ipad:hidden">
-				<button class="hamburger hamburger--collapse outline-none inline-block lg:hidden" type="button">
-					<span class="hamburger-box">
-						<span class="hamburger-inner"></span>
-					</span>
-				</button>
-			</div>
+			<button class="hamburger hamburger--collapse outline-none inline-block lg:hidden" type="button">
+				<span class="hamburger-box">
+					<span class="hamburger-inner"></span>
+				</span>
+			</button>
 
 			<div class="site-branding">
 				<?php $logo = get_field( 'white_logo', 'option' ); ?>
@@ -94,5 +92,27 @@
 		</div><!-- Mega menu -->
 
 	</header><!-- #masthead -->
+
+	<div class="mobile-dropdown ipad:hidden w-full h-screen bg-black fixed z-50">
+
+		<form role="search" method="get" class="w-1/2 search-form flex-wrap flex " action="/">
+			<button type="submit" class="search-submit">
+				<img width="16px" src="<?php echo get_template_directory_uri(); ?>/img/search.svg" alt="MacMall Search">
+			</button>
+			<input type="search" autofocus class="search-field" placeholder="Tìm kiếm" value="<?php echo ( is_search() ) ? $_REQUEST['s'] : ""; ?>" name="s" required>
+		</form>
+
+		<hr>
+
+		<nav id="site-navigation" class="mobile-navigation">
+			<?php
+			wp_nav_menu( array(
+				'theme_location' => 'primary',
+				'container'      => false,
+			) );
+			?>
+		</nav>
+
+	</div>
 
 	<div id="content" class="site-content">
