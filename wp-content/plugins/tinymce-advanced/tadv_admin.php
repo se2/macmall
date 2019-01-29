@@ -723,7 +723,7 @@ if ( ! is_multisite() || current_user_can( 'manage_sites' ) ) {
 			<?php _e( 'This makes the Block Editor more familiar, easier to use, easier to get used to, and more compatible with your existing workflow.', 'tinymce-advanced' ); ?>
 		</p>
 		<p>
-			<?php _e( 'In addition most default blocks can be transformed into classic paragraphs, and a Classis Paragraph can be converted to multiple blocks.', 'tinymce-advanced' ); ?>
+			<?php _e( 'In addition most default blocks can be transformed into classic paragraphs, and a Classic Paragraph can be converted to multiple blocks.', 'tinymce-advanced' ); ?>
 			<?php _e( 'It can be used everywhere instead of the Paragraph Block including in columns, when creating reusable blocks, etc.', 'tinymce-advanced' ); ?>
 		</p>
 		<?php echo $preselect; ?>
