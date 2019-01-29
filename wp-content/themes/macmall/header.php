@@ -25,8 +25,8 @@
 	<!-- Animate.css -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
 
-	<!-- Roboto -->
-	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp;subset=latin-ext,vietnamese" rel="stylesheet">
+	<!-- Montserrat & Quicksand -->
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Quicksand:400,700&amp;subset=latin-ext,vietnamese" rel="stylesheet">
 
 	<?php wp_head(); ?>
 </head>

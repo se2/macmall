@@ -23,10 +23,15 @@ ul.menu {
       @apply .hidden;
     }
     a {
-      @apply text-white text-sm .font-display .font-normal .text-center px-40;
+      @apply text-white text-sm .font-normal .text-center mx-40;
       font-stretch: normal;
       line-height: 1.43;
       letter-spacing: normal;
+      @screen xl {
+        &:hover {
+          @apply text-grey;
+        }
+      }
     }
   }
 }
@@ -92,7 +97,7 @@ ul.menu {
           margin-bottom: 1px;
         }
         a {
-          font-size: 8px;
+          @apply text-sm;
           color: #9e9d9e;
         }
       }
@@ -132,7 +137,7 @@ ul.menu {
       @apply block;
       border-bottom: 1px solid rgba(255, 255, 255, 0.3);
       a {
-        @apply block text-left;
+        @apply block text-left mx-0;
         padding: 15px 0;
         line-height: 1.25;
       }
@@ -152,13 +157,13 @@ ul.menu {
           left: -21px;
           width: 12px;
           height: 12px;
-				}
-				&.is-active {
-					&:before {
-						border-color: white;
-					}
-					border-bottom: 0;
-				}
+        }
+        &.is-active {
+          &:before {
+            border-color: white;
+          }
+          border-bottom: 0;
+        }
       }
       ul.sub-menu {
         @apply pl-0;

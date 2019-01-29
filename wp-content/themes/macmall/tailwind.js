@@ -119,7 +119,11 @@ module.exports = {
 
   fonts: {
     display: [
-      'Roboto',
+      'Quicksand',
+      'sans-serif',
+		],
+		mobile: [
+      'Montserrat',
       'sans-serif',
     ],
     mono: ['Menlo', 'Monaco', 'Consolas', 'Liberation Mono', 'Courier New', 'monospace'],
