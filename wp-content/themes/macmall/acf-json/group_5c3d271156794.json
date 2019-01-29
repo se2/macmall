@@ -22,6 +22,30 @@
             "button_label": "Add Media",
             "sub_fields": [
                 {
+                    "key": "field_5c4fcfb6e7208",
+                    "label": "Layout",
+                    "name": "layout",
+                    "type": "radio",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "w-full": "Full-width",
+                        "w-1\/2": "2-Column"
+                    },
+                    "allow_null": 0,
+                    "other_choice": 0,
+                    "default_value": "w-full",
+                    "layout": "horizontal",
+                    "return_format": "value",
+                    "save_other_choice": 0
+                },
+                {
                     "key": "field_5c3d2a3e787a6",
                     "label": "Desktop Image",
                     "name": "desktop_image",
@@ -46,13 +70,53 @@
                     "mime_types": ""
                 },
                 {
+                    "key": "field_5c4fd12be720a",
+                    "label": "Desktop Image 2",
+                    "name": "desktop_image_2",
+                    "type": "image",
+                    "instructions": "Use with screen >= 1200px",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5c4fcfb6e7208",
+                                "operator": "==",
+                                "value": "w-1\/2"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "url",
+                    "preview_size": "medium",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": ""
+                },
+                {
                     "key": "field_5c3d2a64787a7",
                     "label": "Tablet Image",
                     "name": "tablet_image",
                     "type": "image",
                     "instructions": "Use with screen >= 768px and < 1200px",
                     "required": 0,
-                    "conditional_logic": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5c4fcfb6e7208",
+                                "operator": "==",
+                                "value": "w-full"
+                            }
+                        ]
+                    ],
                     "wrapper": {
                         "width": "",
                         "class": "",
@@ -76,7 +140,15 @@
                     "type": "image",
                     "instructions": "Use with screen < 768px",
                     "required": 0,
-                    "conditional_logic": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5c4fcfb6e7208",
+                                "operator": "==",
+                                "value": "w-full"
+                            }
+                        ]
+                    ],
                     "wrapper": {
                         "width": "",
                         "class": "",
@@ -101,6 +173,29 @@
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array"
+                },
+                {
+                    "key": "field_5c4fd166e720c",
+                    "label": "Media Link 2",
+                    "name": "media_link_2",
+                    "type": "link",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5c4fcfb6e7208",
+                                "operator": "==",
+                                "value": "w-1\/2"
+                            }
+                        ]
+                    ],
                     "wrapper": {
                         "width": "",
                         "class": "",
@@ -173,5 +268,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1547522749
+    "modified": 1548734846
 }
