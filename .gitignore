@@ -25,7 +25,6 @@ wp-content/mu-plugins
 # Ignore dev environment
 wp-content/themes/twentynineteen
 wp-content/themes/macmall/node_modules
-wp-content/themes/macmall/dist
 wp-content/plugins/fakerpress
 
 # wpengine specific
