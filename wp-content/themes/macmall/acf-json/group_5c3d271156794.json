@@ -202,48 +202,6 @@
                         "id": ""
                     },
                     "return_format": "array"
-                },
-                {
-                    "key": "field_5c3d2b13787aa",
-                    "label": "Bottom Divider",
-                    "name": "bottom_divider",
-                    "type": "true_false",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "message": "",
-                    "default_value": 0,
-                    "ui": 0,
-                    "ui_on_text": "",
-                    "ui_off_text": ""
-                },
-                {
-                    "key": "field_5c3d2bca787ab",
-                    "label": "Bottom Divider Color",
-                    "name": "bottom_divider_color",
-                    "type": "color_picker",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": [
-                        [
-                            {
-                                "field": "field_5c3d2b13787aa",
-                                "operator": "==",
-                                "value": "1"
-                            }
-                        ]
-                    ],
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "#ffffff"
                 }
             ]
         }
@@ -268,5 +226,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1548734846
+    "modified": 1549168297
 }

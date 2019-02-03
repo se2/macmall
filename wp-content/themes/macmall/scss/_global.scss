@@ -1,9 +1,6 @@
 html,
 body {
   @apply .font-mobile font-normal;
-  @screen md {
-    @apply .font-display;
-  }
 }
 
 * {
@@ -14,9 +11,6 @@ p {
   @apply .font-mobile text-base .font-normal leading-p text-grey;
   a {
     @apply text-gold;
-  }
-  @screen md {
-    @apply .font-display;
   }
 }
 

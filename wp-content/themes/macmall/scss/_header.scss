@@ -76,7 +76,7 @@ ul.menu {
 
 // Mega-menu styling
 .mega-menu {
-  @apply .fixed z-top .w-full hidden;
+  @apply .fixed z-top .w-full .text-center hidden;
   padding-top: 12px;
   @screen ipad {
     &.js-active {
@@ -84,20 +84,26 @@ ul.menu {
     }
   }
   .container {
-    @apply .bg-white .h-auto;
+    @apply .bg-white .h-auto .w-auto .inline-block;
     animation-duration: 1s;
     max-width: 800px !important;
     border-radius: 12px;
     box-shadow: 0 1px 18px 0 rgba(0, 0, 0, 0.75);
     ul.mega-menu__submenu {
-      @apply flex .flex-wrap .w-full .justify-center;
+      @apply .inline-block .w-auto text-left;
       li {
-        @apply w-1/5 px-30 text-center py-20;
+				@apply px-30 text-center py-20 .inline-block;
+				box-sizing: border-box;
+				width: 156px;
         img {
-          margin-bottom: 1px;
+					margin-bottom: 1px;
+					&.new-sign {
+						@apply .absolute;
+					}
         }
         a {
-          @apply text-sm;
+					@apply .relative;
+          font-size: 0.75rem;
           color: #9e9d9e;
         }
       }

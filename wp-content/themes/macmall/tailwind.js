@@ -119,7 +119,7 @@ module.exports = {
 
   fonts: {
     display: [
-      'Quicksand',
+      'Montserrat',
       'sans-serif',
 		],
 		mobile: [
