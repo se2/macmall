@@ -119,7 +119,9 @@ ul.menu {
   transition: all 700ms ease;
   top: -100vh;
   &.is-active {
-    top: 54px;
+		@apply .overflow-y-scroll;
+		top: 54px;
+		padding-bottom: 54px;
   }
   hr {
     @apply w-full;
@@ -138,7 +140,8 @@ ul.menu {
   }
   .mobile-navigation {
     @apply block .mx-auto;
-    width: 81.33333333%;
+		width: 81.33333333%;
+		padding-bottom: 54px;
     li {
       @apply block;
       border-bottom: 1px solid rgba(255, 255, 255, 0.3);
